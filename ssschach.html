@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Chachin</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons para iconos modernos -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="styles.css?v=13">
+</head>
+
+<body>
+
+    <!-- Fondo tipo red / constelación (tarjeta de presentación) -->
+    <div class="page-network" aria-hidden="true">
+        <svg class="page-network-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <linearGradient id="netStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.55" />
+                    <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:0.35" />
+                </linearGradient>
+            </defs>
+            <g fill="none" stroke="url(#netStroke)" stroke-width="0.9" stroke-linecap="round">
+                <path d="M40,120 L180,80 L320,140 L480,60 L640,100 L820,40 L980,90 L1120,70" />
+                <path d="M60,280 L220,220 L400,260 L560,200 L740,240 L900,180 L1080,220" />
+                <path d="M100,420 L260,380 L440,440 L600,400 L780,460 L940,420 L1100,480" />
+                <path d="M80,600 L240,540 L420,580 L580,520 L760,560 L920,500 L1140,540" />
+                <path d="M180,80 L220,220 L260,380 L240,540" />
+                <path d="M480,60 L400,260 L440,440 L420,580" />
+                <path d="M820,40 L740,240 L780,460 L760,560" />
+                <path d="M1120,70 L1080,220 L1100,480 L1140,540" />
+                <path d="M320,140 L400,260 L440,440" />
+                <path d="M640,100 L560,200 L600,400" />
+                <path d="M980,90 L900,180 L940,420" />
+            </g>
+            <g fill="#ffffff" opacity="0.75">
+                <circle cx="180" cy="80" r="3.5" /><circle cx="480" cy="60" r="3" /><circle cx="820" cy="40" r="3.5" />
+                <circle cx="220" cy="220" r="2.8" /><circle cx="400" cy="260" r="3" /><circle cx="740" cy="240" r="3" />
+                <circle cx="260" cy="380" r="2.8" /><circle cx="600" cy="400" r="3" /><circle cx="940" cy="420" r="3" />
+                <circle cx="240" cy="540" r="2.5" /><circle cx="760" cy="560" r="3" />
+            </g>
+            <g fill="none" stroke="rgba(30,58,95,0.12)" stroke-width="0.6">
+                <path d="M200,160 L350,200 L500,150 M700,320 L850,360 L1000,300" />
+            </g>
+        </svg>
+    </div>
+
+    <!-- Navbar flotante premium -->
+    <nav class="floating-nav">
+        <div class="nav-logo">
+            <img src="logo.png" alt="Logo Servicios Chachin" class="logo-3d" width="40" height="40">
+            
+        </div>
+        <div class="nav-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#soluciones">Soluciones</a>
+            <a href="#demos">Demos</a>
+        </div>
+        <a href="https://wa.me/50232533214?text=Hola,%20quisiera%20agendar%20una%20Consulta%20Gratis%20para%20mi%20empresa" target="_blank" class="btn-nav">Contactar</a>
+    </nav>
+
+    <!-- Hero Section Principal -->
+    <header class="hero">
+        <div class="hero-mesh" aria-hidden="true">
+            <svg class="hero-mesh-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <linearGradient id="meshGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.5" />
+                        <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:0.35" />
+                    </linearGradient>
+                </defs>
+                <g fill="none" stroke="url(#meshGrad)" stroke-width="0.65" opacity="0.75">
+                    <path d="M80,120 L240,80 L400,140 L560,90 L720,160" />
+                    <path d="M60,280 L220,240 L380,300 L540,250 L760,320" />
+                    <path d="M100,420 L260,380 L420,440 L600,400 L740,480" />
+                    <path d="M240,80 L220,240 L260,380" />
+                    <path d="M400,140 L380,300 L420,440" />
+                    <path d="M560,90 L540,250 L600,400" />
+                    <path d="M720,160 L760,320 L740,480" />
+                </g>
+                <g fill="#ffffff">
+                    <circle cx="240" cy="80" r="3" opacity="0.9" />
+                    <circle cx="400" cy="140" r="3" opacity="0.9" />
+                    <circle cx="560" cy="90" r="3" opacity="0.9" />
+                    <circle cx="380" cy="300" r="2.5" opacity="0.85" />
+                    <circle cx="600" cy="400" r="2.5" opacity="0.85" />
+                </g>
+                <g fill="#15803d">
+                    <circle cx="220" cy="240" r="2.5" opacity="0.85" />
+                    <circle cx="420" cy="440" r="2.5" opacity="0.85" />
+                </g>
+                <g fill="#0ea5e9">
+                    <circle cx="720" cy="160" r="2.2" opacity="0.8" />
+                </g>
+            </svg>
+        </div>
+        <div class="container reveal">
+            <div class="hero-brand">
+                <div class="hero-logo-wrap">
+                    <span class="hero-ripple" aria-hidden="true"></span>
+                    <span class="hero-ripple hero-ripple--2" aria-hidden="true"></span>
+                    <div class="hero-logo-ring">
+                        <img src="logo.png" alt="Marca Servicios Chachin" class="hero-logo-img" width="120" height="120">
+                    </div>
+                </div>
+            </div>
+            <h1>Consultoría y soluciones tecnológicas para empresas</h1>
+            <p class="hero-intro">Impulsamos la transformación digital de tu empresa mediante consultoría estratégica y
+                desarrollo de soluciones tecnológicas.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/50232533214?text=Hola,%20quisiera%20agendar%20una%20Consulta%20Gratis%20para%20mi%20empresa." target="_blank" class="btn btn-primary">
+                    Consulta gratis
+                </a>
+                <a href="#servicios" class="btn btn-secondary">
+                    <i class="ph ph-squares-four"></i> Ver servicios
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tres áreas: Consultoría, Asesoría, Servicios -->
+    <section id="servicios" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Consultoría, Asesoría y Servicios</h2>
+            <p class="section-subtitle reveal">Tres formas de acompañar a tu empresa según la etapa en la que te encuentres.</p>
+
+            <div class="services-grid">
+                <!-- Consultoría -->
+                <div class="card reveal" style="transition-delay: 0.1s;">
+                    <div class="card-icon">
+                        <i class="ph ph-rocket-launch"></i>
+                    </div>
+                    <h3>Consultoría</h3>
+                    <p class="card-desc">Para empezar o digitalizar tu negocio con una visión clara.</p>
+                    <ul>
+                        <li><i class="ph-fill ph-check-circle"></i> Diagnóstico empresarial</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Estrategia de digitalización</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Optimización de procesos</li>
+                    </ul>
+                    <a href="#soluciones" class="btn btn-primary btn-accent-sky">
+                        Ver ejemplos <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Asesoría -->
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <div class="card-icon">
+                        <i class="ph ph-lightbulb"></i>
+                    </div>
+                    <h3>Asesoría</h3>
+                    <p class="card-desc">Para entender qué necesita tu empresa y tomar mejores decisiones.</p>
+                    <ul>
+                        <li><i class="ph-fill ph-check-circle"></i> Asesoría administrativa</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Asesoría tecnológica</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Acompañamiento empresarial</li>
+                    </ul>
+                    <a href="https://wa.me/50232533214?text=Hola,%20vengo%20de%20la%20página%20web%20y%20me%20gustaría%20solicitar%20Asesoría." target="_blank" class="btn btn-primary btn-accent-green">
+                        Solicitar asesoría <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Servicios -->
+                <div class="card reveal" style="transition-delay: 0.3s;">
+                    <div class="card-icon">
+                        <i class="ph ph-cpu"></i>
+                    </div>
+                    <h3>Servicios</h3>
+                    <p class="card-desc">Cuando ya sabes qué necesitas y quieres ejecutarlo.</p>
+                    <ul>
+                        <li><i class="ph-fill ph-check-circle"></i> Desarrollo de páginas web</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Aplicaciones web y sistemas</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Sistemas de gestión</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Automatización digital</li>
+                    </ul>
+                    <a href="#soluciones" class="btn btn-primary">
+                        Ver soluciones <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ejemplos de Soluciones -->
+    <section id="soluciones" class="section section--alt">
+        <div class="container">
+            <h2 class="section-title reveal">Ejemplos de soluciones para emprendedores</h2>
+
+            <div class="solutions-grid">
+                <!-- Solución 1 -->
+                <div class="solution-card reveal" style="transition-delay: 0.1s;">
+                    <div class="solution-img">
+                        <button class="carousel-btn prev">&#10094;</button>
+                        <div class="carousel-container">
+                            <!-- Agrega aquí hasta 3 imágenes usando etiquetas <img> -->
+                            <img src="pag1.jpeg"
+                                alt="Fondo 1" class="bg-img">
+                            <img src="pag3.jpeg"
+                                alt="Fondo 2" class="bg-img">
+                            <img src="pag2.jpeg"
+                                alt="Fondo 3" class="bg-img">
+                        </div>
+                        <button class="carousel-btn next">&#10095;</button>
+                        <i class="ph ph-browser"></i>
+                    </div>
+                    <div class="solution-content">
+                        <h4>Página web</h4>
+                        <a href="https://wa.me/50232533214?text=Hola,%20me%20interesa%20crear%20una%20Página%20Web%20para%20mi%20negocio." target="_blank" class="btn">Quiero algo como esto</a>
+                    </div>
+                </div>
+
+              <!-- Solución 3 -->
+                <div class="solution-card reveal" style="transition-delay: 0.3s;">
+                    <div class="solution-img">
+                        <button class="carousel-btn prev">&#10094;</button>
+                        <div class="carousel-container">
+                            <img src="vent1.jpeg"
+                                alt="Fondo 1" class="bg-img">
+                            <img src="vent2.jpeg"
+                                alt="Fondo 2" class="bg-img">
+                            <img src="vent3.jpeg"
+                                alt="Fondo 3" class="bg-img">
+                        </div>
+                        <button class="carousel-btn next">&#10095;</button>
+                        <i class="ph ph-shopping-cart"></i>
+                    </div>
+                    <div class="solution-content">
+                        <h4>Sistema de ventas</h4>
+                        <a href="https://wa.me/50232533214?text=Hola,%20necesito%20un%20Sistema%20de%20Ventas%20para%20mi%20empresa." target="_blank" class="btn">Quiero algo como esto</a>
+                    </div>
+                </div>
+
+                <!-- Solución 4 -->
+                <div class="solution-card reveal" style="transition-delay: 0.4s;">
+                    <div class="solution-img">
+                        <button class="carousel-btn prev">&#10094;</button>
+                        <div class="carousel-container">
+                            <img src="ad1.jpeg" alt="Fondo 1" class="bg-img">
+                            <img src="ad2.jpeg" alt="Fondo 2" class="bg-img">
+                            <img src="ad3.jpeg" alt="Fondo 3" class="bg-img">
+                        </div>
+                        <button class="carousel-btn next">&#10095;</button>
+                        <i class="ph ph-chart-bar"></i>
+                    </div>
+                    <div class="solution-content">
+                        <h4>Sistema administrativo</h4>
+                        <a href="https://wa.me/50232533214?text=Hola,%20me%20interesa%20adquirir%20un%20Sistema%20Administrativo%20para%20mi%20negocio." target="_blank" class="btn">Quiero algo como esto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Videos Demo -->
+    <section id="demos" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Videos Demo de Sistemas</h2>
+            <div class="videos-grid">
+                <!-- Video 1: Páginas Web -->
+                <div class="video-card reveal" style="transition-delay: 0.1s;">
+                    <div class="video-wrapper">
+                        <!-- Reemplaza "AQUI_TU_ID" por el código de tu video de YouTube para Páginas Web -->
+                        <iframe 
+                            src="https://youtu.be/n-ZwYQC0b0c" 
+                            title="Desarrollo de Páginas Web" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-title" style="margin-top: 15px;">Páginas web</div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card reveal" style="transition-delay: 0.2s;">
+                    <div class="video-wrapper">
+                        <!-- Video de YouTube -->
+                        <iframe src="https://youtu.be/NDtkJUKu9RU" title="Sistema de ventas"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-title">Sistema de ventas</div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card reveal" style="transition-delay: 0.3s;">
+                    <div class="video-wrapper">
+                        <!-- Reemplaza "AQUI_TU_ID" por el código de tu segundo video de YouTube -->
+                        <!-- Ejemplo: en tu otro video el código era HNqufgTtTio -->
+                        <iframe src="https://youtu.be/1C3t66Q-sOo" title="Sistema administrativo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-title">Sistema administrativo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="section section--alt section--contact">
+        <div class="container reveal contact-inner">
+            <h2 class="section-title section-title--contact">¡Hablemos de tu proyecto!</h2>
+            <p class="contact-lead">Contáctame directamente por mis canales
+                oficiales para empezar a trabajar juntos.</p>
+            <div class="contact-actions">
+                <a href="mailto:chachgabriel624@gmail.com" class="btn btn-secondary btn-contact">
+                    <i class="ph ph-envelope-simple contact-icon"></i> chachgabriel624@gmail.com
+                </a>
+                <a href="https://wa.me/50232533214?text=Hola,%20vengo%20de%20tu%20sitio%20web%20y%20me%20interesan%20tus%20servicios"
+                    target="_blank" class="btn btn-primary btn-whatsapp">
+                    <i class="ph ph-whatsapp-logo contact-icon"></i> WhatsApp (+502 3253 3214)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="site-footer">
+        <img src="logo.png" alt="" class="footer-logo" width="48" height="48">
+        <p class="footer-copy">&copy; 2025 Servicios Chachin — Consultoría, Asesoría y Servicios. Transformando empresas.</p>
+    </footer>
+
+    <!-- Lightbox Modal para ver imágenes completas -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-btn lightbox-prev">&#10094;</button>
+        <img class="lightbox-content" id="lightbox-img" alt="Vista ampliada">
+        <button class="lightbox-btn lightbox-next">&#10095;</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js?v=8"></script>
+</body>
+
+</html>
