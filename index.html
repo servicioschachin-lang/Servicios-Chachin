@@ -4,15 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultoría, asesoría y desarrollo web para empresas en Guatemala. Páginas web, sistemas de ventas y administrativos. Agenda una consulta gratis.">
     <title>Servicios Chachin</title>
+    <!-- Open Graph: al publicar, sustituye og:url y og:image por la URL final de tu sitio -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Consultoría y desarrollo web | Servicios Chachin">
+    <meta property="og:description" content="Consultoría, asesoría y desarrollo web para empresas. Páginas web, sistemas de ventas y administrativos.">
+    <meta property="og:image" content="https://chachingt.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Phosphor Icons para iconos modernos -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
     <!-- Hoja de estilos -->
-    <link rel="stylesheet" href="styles.css?v=22">
+    <link rel="stylesheet" href="styles.css?v=24">
 </head>
 
 <body>
@@ -21,12 +28,12 @@
     <div class="page-network" aria-hidden="true">
         <svg class="page-network-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
             <defs>
-                <linearGradient id="netStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="netStroke2" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.55" />
                     <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:0.35" />
                 </linearGradient>
             </defs>
-            <g fill="none" stroke="url(#netStroke)" stroke-width="0.9" stroke-linecap="round">
+            <g fill="none" stroke="url(#netStroke2)" stroke-width="0.9" stroke-linecap="round">
                 <path d="M40,120 L180,80 L320,140 L480,60 L640,100 L820,40 L980,90 L1120,70" />
                 <path d="M60,280 L220,220 L400,260 L560,200 L740,240 L900,180 L1080,220" />
                 <path d="M100,420 L260,380 L440,440 L600,400 L780,460 L940,420 L1100,480" />
@@ -51,31 +58,34 @@
         </svg>
     </div>
 
-    <!-- Navbar flotante premium -->
-    <nav class="floating-nav">
-        <div class="nav-logo">
+    <!-- Navbar: one-page + enlaces a páginas de detalle (SEO) -->
+    <nav class="floating-nav floating-nav--site" aria-label="Principal">
+        <a href="#top" class="nav-logo">
             <img src="logo.png" alt="Logo Servicios Chachin" class="logo-3d" width="40" height="40">
-            
-        </div>
+        </a>
         <div class="nav-links">
-            <a href="#servicios">Servicios</a>
+            <a href="#top">Inicio</a>
+            <a href="consultoria.html">Consultoría</a>
+            <a href="asesoria.html">Asesoría</a>
+            <a href="servicios.html">Desarrollo</a>
             <a href="#soluciones">Soluciones</a>
             <a href="#demos">Demos</a>
+            <a href="#contacto">Contacto</a>
         </div>
-        <a href="https://wa.me/50232533214?text=Hola,%20quisiera%20agendar%20una%20Consulta%20Gratis%20para%20mi%20empresa" target="_blank" class="btn-nav">Contactar</a>
+        <a href="https://wa.me/50232533214?text=Hola,%20quisiera%20agendar%20una%20Consulta%20Gratis%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn-nav">Contactar</a>
     </nav>
 
     <!-- Hero Section Principal -->
-    <header class="hero">
+    <header class="hero" id="top">
         <div class="hero-mesh" aria-hidden="true">
             <svg class="hero-mesh-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
                 <defs>
-                    <linearGradient id="meshGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient id="meshGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.5" />
                         <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:0.35" />
                     </linearGradient>
                 </defs>
-                <g fill="none" stroke="url(#meshGrad)" stroke-width="0.65" opacity="0.75">
+                <g fill="none" stroke="url(#meshGrad2)" stroke-width="0.65" opacity="0.75">
                     <path d="M80,120 L240,80 L400,140 L560,90 L720,160" />
                     <path d="M60,280 L220,240 L380,300 L540,250 L760,320" />
                     <path d="M100,420 L260,380 L420,440 L600,400 L740,480" />
@@ -110,11 +120,13 @@
                     </div>
                 </div>
             </div>
-            <h1>Consultoría y soluciones tecnológicas para empresas</h1>
-            <p class="hero-intro">Impulsamos la transformación digital de tu empresa mediante consultoría estratégica y
-                desarrollo de soluciones tecnológicas.</p>
+            <p class="hero-kicker reveal">
+                <span class="hero-kicker-pill"><i class="ph ph-sparkle" aria-hidden="true"></i> Tecnología con enfoque empresarial · Guatemala</span>
+            </p>
+            <h1>Consultoría y <span class="text-gradient">soluciones tecnológicas</span> para tu empresa</h1>
+            <p class="hero-intro">Del diagnóstico a la implementación: te acompañamos para ordenar procesos, ganar visibilidad online y operar con sistemas que sí se usan en el día a día.</p>
             <div class="hero-buttons">
-                <a href="https://wa.me/50232533214?text=Hola,%20quisiera%20agendar%20una%20Consulta%20Gratis%20para%20mi%20empresa." target="_blank" class="btn btn-primary">
+                <a href="https://wa.me/50232533214?text=Hola,%20quisiera%20agendar%20una%20Consulta%20Gratis%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     Consulta gratis
                 </a>
                 <a href="#servicios" class="btn btn-secondary">
@@ -124,11 +136,33 @@
         </div>
     </header>
 
+    <section class="trust-strip" aria-label="Por qué trabajar con nosotros">
+        <div class="container trust-strip-inner">
+            <div class="trust-item">
+                <i class="ph ph-clock" aria-hidden="true"></i>
+                <span>Respuesta en menos de 24 horas</span>
+            </div>
+            <span class="trust-dot" aria-hidden="true"></span>
+            <div class="trust-item">
+                <i class="ph ph-target" aria-hidden="true"></i>
+                <span>Proyectos adaptados a tu presupuesto</span>
+            </div>
+            <span class="trust-dot" aria-hidden="true"></span>
+            <div class="trust-item">
+                <i class="ph ph-headset" aria-hidden="true"></i>
+                <span>Acompañamiento después de la entrega</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Tres áreas: Consultoría, Asesoría, Servicios -->
     <section id="servicios" class="section">
         <div class="container">
-            <h2 class="section-title reveal">Consultoría, Asesoría y Servicios</h2>
-            <p class="section-subtitle reveal">Tres formas de acompañar a tu empresa según la etapa en la que te encuentres.</p>
+            <div class="section-head reveal">
+                <p class="section-eyebrow">Cómo te ayudamos</p>
+                <h2 class="section-title">Consultoría, Asesoría y Servicios</h2>
+                <p class="section-subtitle">Tres formas de acompañar a tu empresa según la etapa en la que te encuentres.</p>
+            </div>
 
             <div class="services-grid">
                 <!-- Consultoría -->
@@ -143,9 +177,10 @@
                         <li><i class="ph-fill ph-check-circle"></i> Estrategia de digitalización</li>
                         <li><i class="ph-fill ph-check-circle"></i> Optimización de procesos</li>
                     </ul>
-                    <a href="#soluciones" class="btn btn-primary btn-accent-sky">
-                        Ver ejemplos <i class="ph ph-arrow-right"></i>
-                    </a>
+                    <div class="card-actions">
+                        <a href="consultoria.html" class="btn btn-primary btn-accent-sky">Conocer más <i class="ph ph-arrow-right"></i></a>
+                        <a href="#soluciones" class="card-link-secondary">Ver ejemplos visuales</a>
+                    </div>
                 </div>
 
                 <!-- Asesoría -->
@@ -160,9 +195,10 @@
                         <li><i class="ph-fill ph-check-circle"></i> Asesoría tecnológica</li>
                         <li><i class="ph-fill ph-check-circle"></i> Acompañamiento empresarial</li>
                     </ul>
-                    <a href="https://wa.me/50232533214?text=Hola,%20vengo%20de%20la%20página%20web%20y%20me%20gustaría%20solicitar%20Asesoría." target="_blank" class="btn btn-primary btn-accent-green">
-                        Solicitar asesoría <i class="ph ph-arrow-right"></i>
-                    </a>
+                    <div class="card-actions">
+                        <a href="asesoria.html" class="btn btn-primary btn-accent-green">Conocer más <i class="ph ph-arrow-right"></i></a>
+                        <a href="https://wa.me/50232533214?text=Hola,%20vengo%20de%20la%20página%20web%20y%20me%20gustaría%20solicitar%20Asesoría." target="_blank" rel="noopener noreferrer" class="card-link-secondary">Escribir por WhatsApp</a>
+                    </div>
                 </div>
 
                 <!-- Servicios -->
@@ -178,9 +214,10 @@
                         <li><i class="ph-fill ph-check-circle"></i> Sistemas de gestión</li>
                         <li><i class="ph-fill ph-check-circle"></i> Automatización digital</li>
                     </ul>
-                    <a href="#soluciones" class="btn btn-primary">
-                        Ver soluciones <i class="ph ph-arrow-right"></i>
-                    </a>
+                    <div class="card-actions">
+                        <a href="servicios.html" class="btn btn-primary">Conocer más <i class="ph ph-arrow-right"></i></a>
+                        <a href="#soluciones" class="card-link-secondary">Ver ejemplos y capturas</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -189,67 +226,64 @@
     <!-- Sección Ejemplos de Soluciones -->
     <section id="soluciones" class="section section--alt">
         <div class="container">
-            <h2 class="section-title reveal">Ejemplos de soluciones para emprendedores</h2>
+            <div class="section-head reveal">
+                <p class="section-eyebrow">Casos reales</p>
+                <h2 class="section-title">Soluciones que ya están funcionando</h2>
+                <p class="section-subtitle">Webs, puntos de venta y sistemas administrativos pensados para negocios que necesitan claridad y control.</p>
+            </div>
 
             <div class="solutions-grid">
-                <!-- Solución 1 -->
+                <!-- Solución 1: Página web -->
                 <div class="solution-card reveal" style="transition-delay: 0.1s;">
                     <div class="solution-img">
-                        <button class="carousel-btn prev">&#10094;</button>
+                        <button type="button" class="carousel-btn prev" aria-label="Imagen anterior del ejemplo de página web">&#10094;</button>
                         <div class="carousel-container">
-                            <!-- Agrega aquí hasta 3 imágenes usando etiquetas <img> -->
-                            <img src="pag1.jpeg"
-                                alt="Fondo 1" class="bg-img">
-                            <img src="pag3.jpeg"
-                                alt="Fondo 2" class="bg-img">
-                            <img src="pag2.jpeg"
-                                alt="Fondo 3" class="bg-img">
+                            <img src="pag1.jpeg" alt="Ejemplo de página web para negocio, vista 1" class="bg-img" loading="lazy">
+                            <img src="pag3.jpeg" alt="Ejemplo de página web para negocio, vista 2" class="bg-img" loading="lazy">
+                            <img src="pag2.jpeg" alt="Ejemplo de página web para negocio, vista 3" class="bg-img" loading="lazy">
                         </div>
-                        <button class="carousel-btn next">&#10095;</button>
+                        <button type="button" class="carousel-btn next" aria-label="Siguiente imagen del ejemplo de página web">&#10095;</button>
                         <i class="ph ph-browser"></i>
                     </div>
                     <div class="solution-content">
                         <h4>Página web</h4>
-                        <a href="https://wa.me/50232533214?text=Hola,%20me%20interesa%20crear%20una%20Página%20Web%20para%20mi%20negocio." target="_blank" class="btn">Quiero algo como esto</a>
+                        <a href="https://wa.me/50232533214?text=Hola,%20me%20interesa%20crear%20una%20Página%20Web%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="btn">Quiero algo como esto</a>
                     </div>
                 </div>
 
-              <!-- Solución 3 -->
+                <!-- Solución 2: Sistema de ventas -->
                 <div class="solution-card reveal" style="transition-delay: 0.3s;">
                     <div class="solution-img">
-                        <button class="carousel-btn prev">&#10094;</button>
+                        <button type="button" class="carousel-btn prev" aria-label="Imagen anterior del sistema de ventas">&#10094;</button>
                         <div class="carousel-container">
-                            <img src="vent1.jpeg"
-                                alt="Fondo 1" class="bg-img">
-                            <img src="vent2.jpeg"
-                                alt="Fondo 2" class="bg-img">
-                            <img src="vent3.jpeg"
-                                alt="Fondo 3" class="bg-img">
+                            <img src="vent1.jpeg" alt="Ejemplo de sistema de ventas, vista 1" class="bg-img" loading="lazy">
+                            <img src="vent2.jpeg" alt="Ejemplo de sistema de ventas, vista 2" class="bg-img" loading="lazy">
+                            <img src="vent3.jpeg" alt="Ejemplo de sistema de ventas, vista 3" class="bg-img" loading="lazy">
                         </div>
-                        <button class="carousel-btn next">&#10095;</button>
+                        <button type="button" class="carousel-btn next" aria-label="Siguiente imagen del sistema de ventas">&#10095;</button>
                         <i class="ph ph-shopping-cart"></i>
                     </div>
                     <div class="solution-content">
                         <h4>Sistema de ventas</h4>
-                        <a href="https://wa.me/50232533214?text=Hola,%20necesito%20un%20Sistema%20de%20Ventas%20para%20mi%20empresa." target="_blank" class="btn">Quiero algo como esto</a>
+                        <a href="https://wa.me/50232533214?text=Hola,%20necesito%20un%20Sistema%20de%20Ventas%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="btn">Quiero algo como esto</a>
                     </div>
                 </div>
 
-                <!-- Solución 4 -->
+                <!-- Solución 3: Sistema administrativo -->
                 <div class="solution-card reveal" style="transition-delay: 0.4s;">
                     <div class="solution-img">
-                        <button class="carousel-btn prev">&#10094;</button>
+                        <button type="button" class="carousel-btn prev" aria-label="Imagen anterior del sistema administrativo">&#10094;</button>
                         <div class="carousel-container">
-                            <img src="ad1.jpeg" alt="Fondo 1" class="bg-img">
-                            <img src="ad2.jpeg" alt="Fondo 2" class="bg-img">
-                            <img src="ad3.jpeg" alt="Fondo 3" class="bg-img">
+                            <img src="ad1.jpeg" alt="Ejemplo de sistema administrativo, vista 1" class="bg-img" loading="lazy">
+                            <img src="ad2.jpeg" alt="Ejemplo de sistema administrativo, vista 2" class="bg-img" loading="lazy">
+                            <img src="ad3.jpeg" alt="Ejemplo de sistema administrativo, vista 3" class="bg-img" loading="lazy">
                         </div>
-                        <button class="carousel-btn next">&#10095;</button>
+                        <button type="button" class="carousel-btn next" aria-label="Siguiente imagen del sistema administrativo">&#10095;</button>
                         <i class="ph ph-chart-bar"></i>
                     </div>
                     <div class="solution-content">
                         <h4>Sistema administrativo</h4>
-                        <a href="https://wa.me/50232533214?text=Hola,%20me%20interesa%20adquirir%20un%20Sistema%20Administrativo%20para%20mi%20negocio." target="_blank" class="btn">Quiero algo como esto</a>
+                        <a href="https://wa.me/50232533214?text=Hola,%20me%20interesa%20adquirir%20un%20Sistema%20Administrativo%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="btn">Quiero algo como esto</a>
                     </div>
                 </div>
             </div>
@@ -259,12 +293,16 @@
     <!-- Sección Videos Demo -->
     <section id="demos" class="section">
         <div class="container">
-            <h2 class="section-title reveal">Videos Demo de Sistemas</h2>
-            <!-- Solo HTML: tres iframes, sin JavaScript ni pestañas. Pegas el ID del vídeo en /embed/ID -->
+            <div class="section-head reveal">
+                <p class="section-eyebrow">Demostraciones</p>
+                <h2 class="section-title">Mira los sistemas en acción</h2>
+                <p class="section-subtitle">Videos cortos para que veas flujos, pantallas y lo que puedes esperar antes de decidir.</p>
+            </div>
             <div class="demos-plain">
                 <div class="demo-block">
                     <p class="demo-block-title">Páginas web</p>
                     <iframe src="https://www.youtube.com/embed/n-ZwYQC0b0c" title="Páginas web" width="560" height="315"
+                        loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                     <a class="demo-block-link" href="https://youtu.be/n-ZwYQC0b0c" target="_blank" rel="noopener noreferrer">Abrir en YouTube</a>
@@ -272,6 +310,7 @@
                 <div class="demo-block">
                     <p class="demo-block-title">Sistema de ventas</p>
                     <iframe src="https://www.youtube.com/embed/NDtkJUKu9RU" title="Sistema de ventas" width="560" height="315"
+                        loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                     <a class="demo-block-link" href="https://youtu.be/NDtkJUKu9RU" target="_blank" rel="noopener noreferrer">Abrir en YouTube</a>
@@ -279,6 +318,7 @@
                 <div class="demo-block">
                     <p class="demo-block-title">Sistema administrativo</p>
                     <iframe src="https://www.youtube.com/embed/1C3t66Q-sOo" title="Sistema administrativo" width="560" height="315"
+                        loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                     <a class="demo-block-link" href="https://youtu.be/1C3t66Q-sOo" target="_blank" rel="noopener noreferrer">Abrir en YouTube</a>
@@ -290,15 +330,15 @@
     <!-- Sección Contacto -->
     <section id="contacto" class="section section--alt section--contact">
         <div class="container reveal contact-inner">
-            <h2 class="section-title section-title--contact">¡Hablemos de tu proyecto!</h2>
-            <p class="contact-lead">Contáctame directamente por mis canales
-                oficiales para empezar a trabajar juntos.</p>
+            <h2 class="section-title section-title--contact">¿Listo para dar el siguiente paso?</h2>
+            <p class="contact-lead">Cuéntame qué necesitas: la primera conversación es sin compromiso y te respondemos por el canal que prefieras.</p>
+            <p class="contact-note"><i class="ph ph-shield-check" aria-hidden="true"></i> Canales oficiales · Atención personalizada</p>
             <div class="contact-actions">
-                <a href="mailto:chachgabriel624@gmail.com" class="btn btn-secondary btn-contact">
-                    <i class="ph ph-envelope-simple contact-icon"></i> chachgabriel624@gmail.com
+                <a href="mailto:info@chachingt.com" class="btn btn-secondary btn-contact">
+                    <i class="ph ph-envelope-simple contact-icon"></i> info@chachingt.com
                 </a>
                 <a href="https://wa.me/50232533214?text=Hola,%20vengo%20de%20tu%20sitio%20web%20y%20me%20interesan%20tus%20servicios"
-                    target="_blank" class="btn btn-primary btn-whatsapp">
+                    target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-whatsapp">
                     <i class="ph ph-whatsapp-logo contact-icon"></i> WhatsApp (+502 3253 3214)
                 </a>
             </div>
@@ -308,15 +348,15 @@
     <!-- Footer Simple -->
     <footer class="site-footer">
         <img src="logo.png" alt="" class="footer-logo" width="48" height="48">
-        <p class="footer-copy">&copy; 2025 Servicios Chachin — Consultoría, Asesoría y Servicios. Transformando empresas.</p>
+        <p class="footer-copy">&copy; 2026 Servicios Chachin. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Lightbox Modal para ver imágenes completas -->
-    <div id="lightbox" class="lightbox">
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen">
         <span class="lightbox-close">&times;</span>
-        <button class="lightbox-btn lightbox-prev">&#10094;</button>
+        <button type="button" class="lightbox-btn lightbox-prev" aria-label="Imagen anterior">&#10094;</button>
         <img class="lightbox-content" id="lightbox-img" alt="Vista ampliada">
-        <button class="lightbox-btn lightbox-next">&#10095;</button>
+        <button type="button" class="lightbox-btn lightbox-next" aria-label="Siguiente imagen">&#10095;</button>
     </div>
 
     <!-- Scripts -->
@@ -324,3 +364,4 @@
 </body>
 
 </html>
+
