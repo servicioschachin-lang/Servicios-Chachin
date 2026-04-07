@@ -72,24 +72,50 @@ function loadGoogleReviews() {
 
     fetch("/.netlify/functions/reviews")
         .then(function (res) {
-            return res.json().then(function (data) {
-                return { ok: res.ok, data: data };
+            return res.text().then(function (text) {
+                var data = null;
+                try {
+                    data = text ? JSON.parse(text) : null;
+                } catch (parseErr) {
+                    return {
+                        ok: false,
+                        badJson: true,
+                        status: res.status,
+                        data: null,
+                    };
+                }
+                return { ok: res.ok, status: res.status, data: data };
             });
         })
         .then(function (_ref) {
+            if (_ref.badJson) {
+                statusEl.textContent = "";
+                if (_ref.status === 404) {
+                    statusEl.textContent =
+                        "No está disponible la función de reseñas: sube a Netlify la carpeta completa del sitio (archivo netlify.toml y carpeta netlify/functions/reviews.js), o conecta el repositorio Git con esos archivos. Solo subir el HTML no activa las funciones.";
+                } else {
+                    statusEl.textContent =
+                        "El servidor devolvió una respuesta que no es JSON (código " +
+                        _ref.status +
+                        "). Revisa el despliegue en Netlify y que exista la función «reviews».";
+                }
+                return;
+            }
+
             var ok = _ref.ok;
             var data = _ref.data;
             statusEl.textContent = "";
 
-            if (data.error === "missing_config") {
+            if (data && data.error === "missing_config") {
                 statusEl.textContent =
-                    "Las reseñas de Google se mostrarán aquí cuando configures GOOGLE_MAPS_API_KEY y GOOGLE_PLACE_ID en Netlify (ver .env.example).";
+                    "Las reseñas de Google se mostrarán aquí cuando en Netlify (Site settings → Environment variables) configures GOOGLE_MAPS_API_KEY y GOOGLE_PLACE_ID, y luego vuelvas a desplegar.";
                 return;
             }
 
-            if (!ok) {
+            if (!ok || !data) {
                 statusEl.textContent =
-                    "No se pudieron cargar las reseñas. Revisa la clave, el Place ID y la facturación de Google Cloud.";
+                    "No se pudieron cargar las reseñas. Revisa la clave API, el Place ID y la facturación de Google Cloud (Places API activada). Detalle: " +
+                    (data && data.detail ? String(data.detail).slice(0, 120) : "error " + (_ref.status || ""));
                 return;
             }
 
@@ -134,7 +160,7 @@ function loadGoogleReviews() {
         })
         .catch(function () {
             statusEl.textContent =
-                "No se puede cargar el bloque de reseñas (¿estás viendo el archivo local sin Netlify?). Sube el sitio o usa netlify dev.";
+                "Error de red al pedir las reseñas. Si abres la web desde un archivo en tu PC, usa el sitio publicado en Netlify. Si ya está en Netlify, comprueba que la URL sea https y que no bloquee el navegador.";
         });
 }
 
