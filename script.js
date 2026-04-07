@@ -15,12 +15,56 @@ function reveal() {
   
 window.addEventListener("scroll", reveal);
 
+function initMobileNav() {
+    var nav = document.querySelector(".floating-nav.floating-nav--site");
+    var toggle = document.querySelector(".nav-toggle");
+    if (!nav || !toggle) return;
+
+    function setOpen(open) {
+        nav.classList.toggle("is-menu-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.classList.toggle("is-open", open);
+        document.body.classList.toggle("nav-open", open);
+    }
+
+    toggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        setOpen(!nav.classList.contains("is-menu-open"));
+    });
+
+    nav.querySelectorAll(".nav-panel a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            setOpen(false);
+        });
+    });
+
+    var btnNav = nav.querySelector(".btn-nav");
+    if (btnNav) {
+        btnNav.addEventListener("click", function () {
+            setOpen(false);
+        });
+    }
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 960) setOpen(false);
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+    });
+
+    document.addEventListener("click", function (e) {
+        if (!nav.classList.contains("is-menu-open")) return;
+        if (!nav.contains(e.target)) setOpen(false);
+    });
+}
+
 // Inicializar scripts al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
+    initMobileNav();
+
     // Ejecutar reveal inmediatamente por si hay elementos en el viewport
     reveal();
-
-    loadGoogleReviews();
 
     // Smooth scroll para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -40,175 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-function reviewStars(rating) {
-    var n = Math.round(Number(rating));
-    if (n < 0) n = 0;
-    if (n > 5) n = 5;
-    var full = "★";
-    var empty = "☆";
-    return full.repeat(n) + empty.repeat(5 - n);
-}
-
-function loadGoogleReviews() {
-    var root = document.getElementById("google-reviews-root");
-    var statusEl = document.getElementById("google-reviews-status");
-    var mapsLink = document.getElementById("google-reviews-maps-link");
-    var attrEl = document.getElementById("google-reviews-attribution");
-    var summaryEl = document.getElementById("google-reviews-summary");
-    if (!root || !statusEl) return;
-
-    statusEl.textContent = "Cargando reseñas…";
-    root.innerHTML = "";
-    if (summaryEl) {
-        summaryEl.hidden = true;
-        summaryEl.textContent = "";
-    }
-    if (mapsLink) {
-        mapsLink.hidden = true;
-        mapsLink.href = "#";
-    }
-    if (attrEl) attrEl.textContent = "";
-
-    fetch("/.netlify/functions/reviews")
-        .then(function (res) {
-            return res.text().then(function (text) {
-                var data = null;
-                try {
-                    data = text ? JSON.parse(text) : null;
-                } catch (parseErr) {
-                    return {
-                        ok: false,
-                        badJson: true,
-                        status: res.status,
-                        data: null,
-                    };
-                }
-                return { ok: res.ok, status: res.status, data: data };
-            });
-        })
-        .then(function (_ref) {
-            if (_ref.badJson) {
-                statusEl.textContent = "";
-                if (_ref.status === 404) {
-                    statusEl.textContent =
-                        "No está disponible la función de reseñas: sube a Netlify la carpeta completa del sitio (archivo netlify.toml y carpeta netlify/functions/reviews.js), o conecta el repositorio Git con esos archivos. Solo subir el HTML no activa las funciones.";
-                } else {
-                    statusEl.textContent =
-                        "El servidor devolvió una respuesta que no es JSON (código " +
-                        _ref.status +
-                        "). Revisa el despliegue en Netlify y que exista la función «reviews».";
-                }
-                return;
-            }
-
-            var ok = _ref.ok;
-            var data = _ref.data;
-            statusEl.textContent = "";
-
-            if (data && data.error === "missing_config") {
-                statusEl.textContent =
-                    "Las reseñas de Google se mostrarán aquí cuando en Netlify (Site settings → Environment variables) configures GOOGLE_MAPS_API_KEY y GOOGLE_PLACE_ID, y luego vuelvas a desplegar.";
-                return;
-            }
-
-            if (!ok || !data) {
-                statusEl.textContent =
-                    "No se pudieron cargar las reseñas. Revisa la clave API, el Place ID y la facturación de Google Cloud (Places API activada). Detalle: " +
-                    (data && data.detail ? String(data.detail).slice(0, 120) : "error " + (_ref.status || ""));
-                return;
-            }
-
-            if (data.attribution && attrEl) {
-                attrEl.textContent = data.attribution;
-            }
-
-            if (data.googleMapsUri && mapsLink) {
-                mapsLink.href = data.googleMapsUri;
-                mapsLink.hidden = false;
-            }
-
-            if (
-                summaryEl &&
-                data.placeRating != null &&
-                !isNaN(Number(data.placeRating))
-            ) {
-                summaryEl.hidden = false;
-                var line =
-                    "Valoración en Google Maps: " +
-                    Number(data.placeRating).toFixed(1) +
-                    " / 5";
-                if (data.displayName) {
-                    line += " · " + data.displayName;
-                }
-                summaryEl.textContent = line;
-            }
-
-            var reviews = data.reviews;
-            if (!reviews || !reviews.length) {
-                statusEl.textContent =
-                    "No hay reseñas para mostrar aún, o tu plan de Google no devuelve el campo de reseñas.";
-                return;
-            }
-
-            var frag = document.createDocumentFragment();
-            for (var i = 0; i < reviews.length; i++) {
-                frag.appendChild(buildReviewCard(reviews[i]));
-            }
-            root.appendChild(frag);
-            reveal();
-        })
-        .catch(function () {
-            statusEl.textContent =
-                "Error de red al pedir las reseñas. Si abres la web desde un archivo en tu PC, usa el sitio publicado en Netlify. Si ya está en Netlify, comprueba que la URL sea https y que no bloquee el navegador.";
-        });
-}
-
-function buildReviewCard(r) {
-    var card = document.createElement("article");
-    card.className = "review-card";
-
-    var header = document.createElement("div");
-    header.className = "review-card-header";
-
-    var authorWrap = document.createElement("span");
-    authorWrap.className = "review-author";
-    if (r.authorUri) {
-        var a = document.createElement("a");
-        a.href = r.authorUri;
-        a.target = "_blank";
-        a.rel = "noopener noreferrer";
-        a.textContent = r.author || "Google user";
-        authorWrap.appendChild(a);
-    } else {
-        authorWrap.textContent = r.author || "Usuario de Google";
-    }
-    header.appendChild(authorWrap);
-
-    if (r.rating != null) {
-        var stars = document.createElement("span");
-        stars.className = "review-stars";
-        stars.setAttribute("aria-label", String(r.rating) + " de 5");
-        stars.textContent = reviewStars(r.rating);
-        header.appendChild(stars);
-    }
-
-    card.appendChild(header);
-
-    if (r.relativeTime || r.publishTime) {
-        var meta = document.createElement("p");
-        meta.className = "review-meta";
-        meta.textContent = r.relativeTime || r.publishTime || "";
-        card.appendChild(meta);
-    }
-
-    var body = document.createElement("p");
-    body.className = "review-body";
-    body.textContent = r.text || "";
-    card.appendChild(body);
-
-    return card;
-}
 
 // Lógica para los carruseles de imágenes
 document.querySelectorAll('.solution-img').forEach(container => {

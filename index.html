@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Consultoría, asesoría y desarrollo web para empresas en Guatemala. Páginas web, sistemas de ventas y administrativos. Agenda una consulta gratis.">
-    <title>Consultoría y desarrollo web | Servicios Chachin</title>
+    <title>Servicios Chachin</title>
     <!-- Open Graph: al publicar, sustituye og:url y og:image por la URL final de tu sitio -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Consultoría y desarrollo web | Servicios Chachin">
+    <meta property="og:title" content="Servicios Chachin">
     <meta property="og:description" content="Consultoría, asesoría y desarrollo web para empresas. Páginas web, sistemas de ventas y administrativos.">
     <meta property="og:image" content="https://chachingt.com/logo.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -19,7 +19,7 @@
     <!-- Phosphor Icons para iconos modernos -->
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
     <!-- Hoja de estilos -->
-    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="stylesheet" href="styles.css?v=28">
 </head>
 
 <body>
@@ -63,17 +63,28 @@
         <a href="#top" class="nav-logo">
             <img src="logo.png" alt="Logo Servicios Chachin" class="logo-3d" width="40" height="40">
         </a>
-        <div class="nav-links">
-            <a href="#top">Inicio</a>
-            <a href="consultoria.html">Consultoría</a>
-            <a href="asesoria.html">Asesoría</a>
-            <a href="servicios.html">Desarrollo</a>
-            <a href="#soluciones">Soluciones</a>
-            <a href="#demos">Demos</a>
-            <a href="#resenas">Reseñas</a>
-            <a href="#contacto">Contacto</a>
+        <div class="nav-panel" id="site-nav-menu">
+            <div class="nav-links">
+                <a href="#top">Inicio</a>
+                <a href="consultoria.html">Consultoría</a>
+                <a href="asesoria.html">Asesoría</a>
+                <a href="servicios.html">Desarrollo</a>
+                <a href="#soluciones">Soluciones</a>
+                <a href="#demos">Demos</a>
+                <a href="#resenas">Reseñas</a>
+                <a href="#contacto">Contacto</a>
+            </div>
         </div>
-        <a href="https://wa.me/50232533214?text=Hola,%20quisiera%20agendar%20una%20Consulta%20Gratis%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn-nav">Contactar</a>
+        <div class="nav-actions">
+            <a href="https://wa.me/50232533214?text=Hola,%20quisiera%20agendar%20una%20Consulta%20Gratis%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn-nav">Contactar</a>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav-menu" aria-label="Abrir o cerrar menú">
+                <span class="nav-toggle-bars" aria-hidden="true">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </span>
+            </button>
+        </div>
     </nav>
 
     <!-- Hero Section Principal -->
@@ -333,8 +344,7 @@
         <div class="container">
             <div class="section-head reveal">
                 <p class="section-eyebrow">Opiniones</p>
-                <h2 class="section-title" id="resenas-title">Lo que dicen en Google Maps</h2>
-                <p class="section-subtitle">Últimas reseñas públicas (hasta 5 disponibles en la API de Google). La lista puede ordenarse por relevancia en origen; mostramos las más recientes cuando hay fecha.</p>
+                <h2 class="section-title" id="resenas-title">Lo que dicen nuestros clientes</h2>
             </div>
            <!-- Elfsight Google Reviews | Untitled Google Reviews -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
@@ -374,7 +384,7 @@
     </div>
 
     <!-- Scripts: reviews-api.js es aparte para evitar caché vieja y mostrar errores claros -->
-    <script src="script.js?v=17"></script>
+    <script src="script.js?v=19"></script>
     <script src="reviews-api.js?v=3"></script>
 </body>
 

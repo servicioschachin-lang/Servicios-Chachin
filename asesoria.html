@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Asesoría administrativa y tecnológica en Guatemala. Acompañamiento para decisiones de negocio, proveedores y herramientas digitales.">
-    <title>Asesoría administrativa y tecnológica | Servicios Chachin</title>
+    <title>Servicios Chachin</title>
     <meta property="og:title" content="Asesoría administrativa y tecnológica | Servicios Chachin">
     <meta property="og:description" content="Acompañamiento en decisiones administrativas y tecnológicas para tu empresa.">
     <meta property="og:image" content="https://chachingt.com/logo.png">
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
-    <link rel="stylesheet" href="styles.css?v=24">
+    <link rel="stylesheet" href="styles.css?v=28">
 </head>
 
 <body>
@@ -55,16 +55,28 @@
         <a href="index.html" class="nav-logo">
             <img src="logo.png" alt="Logo Servicios Chachin" class="logo-3d" width="40" height="40">
         </a>
-        <div class="nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="consultoria.html">Consultoría</a>
-            <a href="asesoria.html" class="is-active">Asesoría</a>
-            <a href="servicios.html">Desarrollo</a>
-            <a href="index.html#soluciones">Soluciones</a>
-            <a href="index.html#demos">Demos</a>
-            <a href="index.html#contacto">Contacto</a>
+        <div class="nav-panel" id="site-nav-menu">
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="consultoria.html">Consultoría</a>
+                <a href="asesoria.html" class="is-active">Asesoría</a>
+                <a href="servicios.html">Desarrollo</a>
+                <a href="index.html#soluciones">Soluciones</a>
+                <a href="index.html#demos">Demos</a>
+                <a href="index.html#resenas">Reseñas</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
         </div>
-        <a href="https://wa.me/50232533214?text=Hola,%20me%20gustar%C3%ADa%20Asesor%C3%ADa%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="btn-nav">Contactar</a>
+        <div class="nav-actions">
+            <a href="https://wa.me/50232533214?text=Hola,%20me%20gustar%C3%ADa%20Asesor%C3%ADa%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="btn-nav">Contactar</a>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav-menu" aria-label="Abrir o cerrar menú">
+                <span class="nav-toggle-bars" aria-hidden="true">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </span>
+            </button>
+        </div>
     </nav>
 
     <header class="page-inner-hero reveal">
@@ -106,7 +118,7 @@
         <p class="footer-copy">&copy; 2025 Servicios Chachin. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js?v=12"></script>
+    <script src="script.js?v=19"></script>
 </body>
 
 </html>
