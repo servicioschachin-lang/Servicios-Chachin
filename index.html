@@ -12,17 +12,19 @@
     <meta property="og:description" content="Consultoría, asesoría y desarrollo web para empresas. Páginas web, sistemas de ventas y administrativos.">
     <meta property="og:image" content="https://chachingt.com/logo.png">
     <meta name="twitter:card" content="summary_large_image">
-    <!-- Google Fonts: Outfit -->
+    <!-- Google Fonts: Lexend + Source Sans 3 (design-system/servicios-chachin/MASTER.md) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Phosphor Icons para iconos modernos -->
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
     <!-- Hoja de estilos -->
-    <link rel="stylesheet" href="styles.css?v=28">
+    <link rel="stylesheet" href="styles.css?v=30">
 </head>
 
 <body>
+
+    <a class="skip-link" href="#contenido-principal">Ir al contenido</a>
 
     <!-- Fondo tipo red / constelación (tarjeta de presentación) -->
     <div class="page-network" aria-hidden="true">
@@ -142,12 +144,13 @@
                     Consulta gratis
                 </a>
                 <a href="#servicios" class="btn btn-secondary">
-                    <i class="ph ph-squares-four"></i> Ver servicios
+                    <i class="ph ph-squares-four" aria-hidden="true"></i> Ver servicios
                 </a>
             </div>
         </div>
     </header>
 
+    <main id="contenido-principal" tabindex="-1">
     <section class="trust-strip" aria-label="Por qué trabajar con nosotros">
         <div class="container trust-strip-inner">
             <div class="trust-item">
@@ -346,9 +349,11 @@
                 <p class="section-eyebrow">Opiniones</p>
                 <h2 class="section-title" id="resenas-title">Lo que dicen nuestros clientes</h2>
             </div>
-           <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-20f51f13-195a-4aad-a655-1507c4d69786" data-elfsight-app-lazy></div></div>
+            <div class="reviews-widget-wrap reveal" role="region" aria-label="Reseñas en Google">
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-20f51f13-195a-4aad-a655-1507c4d69786" data-elfsight-app-lazy></div>
+            </div>
+        </div>
     </section>
 
     <!-- Sección Contacto -->
@@ -368,23 +373,24 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer Simple -->
     <footer class="site-footer">
-        <img src="logo.png" alt="" class="footer-logo" width="48" height="48">
+        <img src="logo.png" alt="Servicios Chachin" class="footer-logo" width="48" height="48">
         <p class="footer-copy">&copy; 2025 Servicios Chachin. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Lightbox Modal para ver imágenes completas -->
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen">
-        <span class="lightbox-close">&times;</span>
+        <button type="button" class="lightbox-close" aria-label="Cerrar vista ampliada">&times;</button>
         <button type="button" class="lightbox-btn lightbox-prev" aria-label="Imagen anterior">&#10094;</button>
         <img class="lightbox-content" id="lightbox-img" alt="Vista ampliada">
         <button type="button" class="lightbox-btn lightbox-next" aria-label="Siguiente imagen">&#10095;</button>
     </div>
 
     <!-- Scripts: reviews-api.js es aparte para evitar caché vieja y mostrar errores claros -->
-    <script src="script.js?v=19"></script>
+    <script src="script.js?v=20"></script>
     <script src="reviews-api.js?v=3"></script>
 </body>
 

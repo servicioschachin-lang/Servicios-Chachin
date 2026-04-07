@@ -69,14 +69,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // Smooth scroll para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            
+
             // Si el href es solo '#' no hacemos nada (ignorar botones vacíos)
-            if(targetId === '#') return;
-            
+            if (targetId === '#') return;
+
+            // “Ir al contenido”: foco en <main> para lectores de pantalla y teclado
+            if (this.classList.contains('skip-link')) {
+                e.preventDefault();
+                const mainEl = document.querySelector(targetId);
+                if (mainEl) {
+                    mainEl.scrollIntoView({ behavior: 'smooth' });
+                    mainEl.focus({ preventScroll: true });
+                }
+                return;
+            }
+
+            e.preventDefault();
             const targetElement = document.querySelector(targetId);
-            if(targetElement) {
+            if (targetElement) {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
@@ -111,7 +122,7 @@ const lightboxNext = document.querySelector('.lightbox-next');
 let currentGallery = [];
 let currentIndex = 0;
 
-if(lightbox) {
+if (lightbox) {
     document.querySelectorAll('.carousel-container').forEach(container => {
         const images = Array.from(container.querySelectorAll('img.bg-img'));
         
@@ -125,9 +136,11 @@ if(lightbox) {
         });
     });
 
-    lightboxClose.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-    });
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+    }
 
     lightbox.addEventListener('click', (e) => {
         if(e.target === lightbox) {
@@ -135,18 +148,24 @@ if(lightbox) {
         }
     });
 
-    lightboxPrev.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : currentGallery.length - 1;
-        updateLightbox();
-    });
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : currentGallery.length - 1;
+            updateLightbox();
+        });
+    }
 
-    lightboxNext.addEventListener('click', () => {
-        currentIndex = (currentIndex < currentGallery.length - 1) ? currentIndex + 1 : 0;
-        updateLightbox();
-    });
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', () => {
+            currentIndex = (currentIndex < currentGallery.length - 1) ? currentIndex + 1 : 0;
+            updateLightbox();
+        });
+    }
 
     function updateLightbox() {
-        lightboxImg.src = currentGallery[currentIndex];
+        if (lightboxImg && currentGallery[currentIndex]) {
+            lightboxImg.src = currentGallery[currentIndex];
+        }
     }
 }
 
