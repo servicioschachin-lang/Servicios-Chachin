@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Desarrollo de páginas web, sistemas de ventas y administrativos. Aplicaciones web y automatización a medida para empresas en Guatemala.">
+    <meta name="theme-color" content="#5e5e62">
+    <meta name="description" content="Servicios técnicos en Guatemala: páginas web, sistemas, facturación, inventario y automatización para distintos rubros —no solo desarrollo web.">
     <title>Servicios Chachin</title>
-    <meta property="og:title" content="Desarrollo web y sistemas a medida | Servicios Chachin">
-    <meta property="og:description" content="Páginas web, sistemas de ventas y administrativos. Soluciones a tu medida.">
+    <meta property="og:title" content="Servicios técnicos y sistemas a medida | Servicios Chachin">
+    <meta property="og:description" content="Web, sistemas de gestión, facturación y soluciones según tu sector y operación en Guatemala.">
     <meta property="og:image" content="https://chachingt.com/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
-    <link rel="stylesheet" href="styles.css?v=30">
+    <link rel="stylesheet" href="styles.css?v=45">
 </head>
 
 <body>
@@ -21,36 +22,7 @@
     <a class="skip-link" href="#contenido-principal">Ir al contenido</a>
 
     <div class="page-network" aria-hidden="true">
-        <svg class="page-network-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-            <defs>
-                <linearGradient id="netStrokeServ" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.55" />
-                    <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:0.35" />
-                </linearGradient>
-            </defs>
-            <g fill="none" stroke="url(#netStrokeServ)" stroke-width="0.9" stroke-linecap="round">
-                <path d="M40,120 L180,80 L320,140 L480,60 L640,100 L820,40 L980,90 L1120,70" />
-                <path d="M60,280 L220,220 L400,260 L560,200 L740,240 L900,180 L1080,220" />
-                <path d="M100,420 L260,380 L440,440 L600,400 L780,460 L940,420 L1100,480" />
-                <path d="M80,600 L240,540 L420,580 L580,520 L760,560 L920,500 L1140,540" />
-                <path d="M180,80 L220,220 L260,380 L240,540" />
-                <path d="M480,60 L400,260 L440,440 L420,580" />
-                <path d="M820,40 L740,240 L780,460 L760,560" />
-                <path d="M1120,70 L1080,220 L1100,480 L1140,540" />
-                <path d="M320,140 L400,260 L440,440" />
-                <path d="M640,100 L560,200 L600,400" />
-                <path d="M980,90 L900,180 L940,420" />
-            </g>
-            <g fill="#ffffff" opacity="0.75">
-                <circle cx="180" cy="80" r="3.5" /><circle cx="480" cy="60" r="3" /><circle cx="820" cy="40" r="3.5" />
-                <circle cx="220" cy="220" r="2.8" /><circle cx="400" cy="260" r="3" /><circle cx="740" cy="240" r="3" />
-                <circle cx="260" cy="380" r="2.8" /><circle cx="600" cy="400" r="3" /><circle cx="940" cy="420" r="3" />
-                <circle cx="240" cy="540" r="2.5" /><circle cx="760" cy="560" r="3" />
-            </g>
-            <g fill="none" stroke="rgba(30,58,95,0.12)" stroke-width="0.6">
-                <path d="M200,160 L350,200 L500,150 M700,320 L850,360 L1000,300" />
-            </g>
-        </svg>
+        <canvas class="page-network-canvas"></canvas>
     </div>
 
     <nav class="floating-nav floating-nav--site" aria-label="Principal">
@@ -63,6 +35,8 @@
                 <a href="consultoria.html">Consultoría</a>
                 <a href="asesoria.html">Asesoría</a>
                 <a href="servicios.html" class="is-active">Desarrollo</a>
+                <a href="rubros.html">Rubros</a>
+                <a href="preguntas-frecuentes.html" title="Preguntas frecuentes">Preguntas</a>
                 <a href="index.html#soluciones">Soluciones</a>
                 <a href="index.html#demos">Demos</a>
                 <a href="index.html#resenas">Reseñas</a>
@@ -85,14 +59,17 @@
         <nav class="breadcrumb" aria-label="Migas de pan">
             <a href="index.html">Inicio</a> / Desarrollo y sistemas
         </nav>
-        <h1>Desarrollo web y sistemas a medida</h1>
-        <p class="page-inner-lead">Cuando ya tienes claro qué necesitas —presencia online, punto de venta, control administrativo o automatización— diseñamos y construimos soluciones que se adaptan a tu operación, no al revés.</p>
+        <h1>Servicios técnicos y sistemas a tu medida</h1>
+        <p class="page-inner-lead">No solo “páginas web”: desarrollamos lo que tu operación requiiera —desde presencia online hasta <strong>ventas, inventario, facturación o automatización</strong>— respetando tu rubro y cómo trabaja tu equipo.</p>
     </header>
 
     <main id="contenido-principal" class="detail-article" tabindex="-1">
         <article class="detail-prose reveal">
+            <h2>Rubros y sectores</h2>
+            <p>Hemos acompañado negocios muy distintos: por ejemplo <strong>restaurantes y venta de comida</strong>, comercios con <strong>facturación y punto de venta</strong>, <strong>pequeñas y medianas empresas</strong>, <strong>carpintería y taller</strong>, <strong>construcción</strong>, <strong>electricidad</strong> y otros oficios o servicios. En <a href="rubros.html">Rubros y sectores</a> hay descripciones por rama; si el tuyo no aparece, igual podemos evaluar encaje.</p>
+
             <h2>Qué desarrollamos</h2>
-            <p>Cada proyecto parte de tus procesos reales. Priorizamos que el sistema sea usable para tu equipo, estable en el día a día y escalable si tu negocio crece.</p>
+            <p>Cada proyecto parte de tus procesos reales. Priorizamos que el sistema sea <strong>usable</strong> para tu equipo, estable en el día a día y escalable si tu negocio crece —sin limitarnos a “solo web” si lo que necesitas es operación.</p>
             <ul>
                 <li><strong>Páginas web y presencia digital:</strong> sitios orientados a generar confianza o leads, con buena carga en móvil y mensajes claros para tu cliente.</li>
                 <li><strong>Aplicaciones web y sistemas:</strong> acceso desde el navegador, roles de usuario (vendedor, administrador, etc.) y respaldo de datos según tu necesidad.</li>
@@ -119,10 +96,14 @@
 
     <footer class="site-footer">
         <a href="index.html"><img src="logo.png" alt="Servicios Chachin" class="footer-logo" width="48" height="48"></a>
-        <p class="footer-copy">&copy; 2025 Servicios Chachin. Todos los derechos reservados.</p>
+        <p class="footer-copy">&copy; 2026 Servicios Chachin. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js?v=20"></script>
+    <button type="button" class="scroll-top" id="scroll-top" aria-label="Volver al inicio de la página" title="Volver arriba">
+        <i class="ph ph-caret-double-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="script.js?v=25"></script>
 </body>
 
 </html>
